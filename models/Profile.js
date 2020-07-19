@@ -11,9 +11,12 @@ const ProfileSchema = new mangoose.Schema({
     website: {
         type: String
     },
-    lacation: {
+    location: {
         type: String,
-        require: true
+    },
+    status: {
+        type: String,
+        required: true
     },
     skills: {
         type: [String],
@@ -94,7 +97,7 @@ const ProfileSchema = new mangoose.Schema({
         facebook: {
             type: String
         },
-        lindedin: {
+        linkedin: {
             type: String
         },
         instagram: {
