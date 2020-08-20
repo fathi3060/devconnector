@@ -37,7 +37,7 @@ router.post(
         check('status', 'Statut requis')
             .not()
             .isEmpty(),
-        check('skills', 'Skills requis')
+        check('skills', 'Compétences requises')
             .not()
             .isEmpty()
     ],
@@ -72,7 +72,11 @@ router.post(
         if(status) profileFields.status = status;
         if(githubusername) profileFields.githubusername = githubusername;
         if(skills) {
-            profileFields.skills = skills.split(',').map(skill => skill.trim());
+            skills: Array.isArray(skills)
+            ? skills
+            : skills.split(',').map((skill) => ' ' + skill.trim())
+//            profileFields.skills = skills.split(',').map(skill => skill.trim());
+            profileFields.skills = skills;
         }
 
         //construction oject Social
