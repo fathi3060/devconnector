@@ -142,14 +142,14 @@ router.get('/user/:user_id', async (req, res) => {
             user: req.params.user_id
         }).populate('user', ['name', 'avatar']);
 
-        if (!profile) 
-            return res.status(400).json({msg: "Profile inexistant."});
-
+        if (!profile){
+            return res.status(400).json({msg: "Profil inexistant."});
+        }
         res.json(profile);
     } catch (err) {
         console.error(err.message);
         if(err.kind = "ObjectId") {
-            return res.status(400).json({msg: "Profile inexistant."});
+            return res.status(400).json({msg: "Profil inexistant."});
         }
         res.status(500).send('Erreur Serveur.');
     }
