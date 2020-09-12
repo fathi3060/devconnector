@@ -353,7 +353,7 @@ router.get('/github/:username', (req, res) => {
             method: 'GET',
             headers: { 'user-agent': 'node.js' }
         };
-        console.log(options.uri);
+//        console.log(options.uri);
         request(options, (error, response, body) => {
             if(error) console.error(error);
             if(response.statusCode !== 200) {
@@ -369,5 +369,6 @@ router.get('/github/:username', (req, res) => {
 }
 
 );
+
 
 module.exports = router;
