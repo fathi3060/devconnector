@@ -30,7 +30,7 @@
     "redux-thunk": "^2.3.0",
     "request": "^2.88.2",
     "websocket-extensions": "^0.1.4",
-    "yargs-parser": "^20.1.0"
+    "yargs-parser": "^20.2.0"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
